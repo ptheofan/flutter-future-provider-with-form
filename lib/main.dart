@@ -17,12 +17,24 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final form = ref.watch(formProvider);
-    final search = ref.watch(searchProvider(SearchParams(
+    final p1 = SearchParams(
       term: form.term,
       after: form.after,
       offset: 0,
       limit: 10,
-    )));
+    );
+
+    final p2 = SearchParams(
+      term: form.term,
+      after: form.after,
+      offset: 0,
+      limit: 10,
+    );
+
+    print('p1 == p2: ${p1 == p2}');
+    print('p1.hashcode == p2.hashcode: ${p1.hashCode == p2.hashCode}');
+
+    final search = ref.watch(searchProvider(p1));
 
     return MaterialApp(
       title: 'Flutter Demo',

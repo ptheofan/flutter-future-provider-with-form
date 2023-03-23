@@ -20,7 +20,7 @@ class SearchParams with _$SearchParams {
 @riverpod
 Future<SearchResult> search(SearchRef ref, SearchParams params) async {
   // Sleep for 1 second to simulate a network request
-  await Future.delayed(const Duration(seconds: 10));
+  await Future.delayed(const Duration(seconds: 1));
 
   // Return a fake result
   return SearchResult(
