@@ -24,7 +24,7 @@ Future<SearchResult> search(SearchRef ref, SearchParams params) async {
 
   // Return a fake result
   return SearchResult(
-    items: List.generate(params.limit, (index) => 'Item $index'),
+    items: List.generate(params.limit, (index) => 'Item $index of ${params.term}'),
     total: 100,
     currentPage: 1,
     totalPages: 2,
