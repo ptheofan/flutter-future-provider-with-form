@@ -4,7 +4,7 @@ import 'package:future_provider/search.dart';
 import 'package:future_provider/search_result.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import 'search_widget.dart';
+import 'form_widget.dart';
 
 void main() {
   runApp(ProviderScope(child: MyApp()));
@@ -41,7 +41,7 @@ class MyApp extends ConsumerWidget {
       home: Scaffold(
         body: Column(
           children: [
-            SearchWidget(),
+            FormWidget(),
             search.when(data: (SearchResult data) {
               return Column(
                 children: [
